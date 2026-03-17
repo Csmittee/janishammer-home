@@ -4,98 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janishammer · Main Hub</title>
-    <!-- Central injector - loads everything -->
+    <!-- Central injector - now with proper font loading -->
     <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central@main/js/injector.js"></script>
-    <!-- Temporary inline styles for testing -->
+    <!-- Load Montserrat properly -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --j-primary: #e34c26;
             --j-secondary: #333333;
+            --j-font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --j-font-heading: 'Montserrat', sans-serif;
+            --j-font-body: 'Montserrat', sans-serif;
         }
+        
+        /* Fix navbar spacing and size */
+        .j-nav {
+            padding: 1rem 2rem !important;
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .j-nav-links a {
+            font-size: 1.1rem !important;
+            padding: 0.8rem 1.5rem !important;
+            font-weight: 500 !important;
+        }
+        
+        .j-nav-brand {
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Fix button size */
+        .j-btn {
+            padding: 1rem 2.5rem !important;
+            font-size: 1.2rem !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+        }
+        
         .test-product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
+        
         .test-card {
             background: rgba(255,255,255,0.4);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 24px;
+            padding: 2.5rem;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
+        
         .test-card video {
             width: 100%;
-            max-width: 300px;
-            border-radius: 16px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            max-width: 350px;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+        
         .test-card h2 {
+            font-size: 2rem;
             margin: 1rem 0;
-            color: var(--j-primary);
+            font-weight: 600;
         }
+        
         .test-card p {
-            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 1rem 0;
         }
-        .test-nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        .test-nav-links a {
-            color: var(--j-primary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        .test-nav-links a:hover {
-            background: var(--j-primary);
-            color: white;
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .j-nav-links a {
+                font-size: 1rem !important;
+                padding: 0.6rem 1rem !important;
+            }
+            
+            .test-card {
+                padding: 1.5rem;
+            }
+            
+            .test-card h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Temporary test navigation - will be replaced by injector's nav once stable -->
-    <div class="test-nav-links">
-        <a href="https://janishammer.com">Home</a>
-        <a href="https://flow.janishammer.com">Janis Flow</a>
-        <a href="https://jade.janishammer.com">Jade Coffee</a>
-        <a href="https://daje.janishammer.com">Daje Games</a>
-        <a href="https://janishammer.com/contact">Contact</a>
-    </div>
-
-    <div style="text-align: center; padding: 2rem;">
-        <h1>🏠 Janishammer Family</h1>
-        <p>Testing our multi-domain system</p>
+    <div style="text-align: center; padding: 3rem 1rem;">
+        <h1 style="font-size: 3rem; font-weight: 700;">🏠 Janishammer Family</h1>
+        <p style="font-size: 1.2rem; opacity: 0.8;">Testing our multi-domain system</p>
     </div>
 
     <div class="test-product-grid">
-        <!-- One product card for testing -->
         <div class="test-card">
             <video autoplay loop muted playsinline>
                 <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/janishammer.mp4" type="video/mp4">
             </video>
-            <h2>Welcome to the Family</h2>
-            <p>This page tests our central injector and navigation system.</p>
-            <p>Click around to visit all subdomains!</p>
-            <button class="j-btn" onclick="alert('Injector working!')">Test Injector</button>
+            <h2>JanisHammer</h2>
+            <p>Seeking peaceful, healthy productive lifestyle</p>
+            <p style="font-weight: 600; color: var(--j-primary);">Launch 2020</p>
+            <p style="font-size: 1rem; margin: 1.5rem 0;">Welcome to the Family. This page tests our central injector and navigation system. Click around to visit all subdomains!</p>
+            <button class="j-btn" onclick="alert('Injector working! Navbar and buttons fixed!')">Test Injector</button>
         </div>
     </div>
 
     <script>
-        // Log to confirm injector loaded
-        console.log('✅ janishammer-home page loaded');
-        // Test that central injector is working
+        console.log('✅ janishammer-home page loaded with fixed navbar');
         if (window.validateJanishammer) {
-            console.log('✅ Central injector detected');
             setTimeout(() => window.validateJanishammer(), 500);
         }
     </script>
