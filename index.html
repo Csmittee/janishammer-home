@@ -1,130 +1,621 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janishammer · Main Hub</title>
-    <!-- Central injector - now with proper font loading -->
-    <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central@main/js/injector.js"></script>
-    <!-- Load Montserrat properly -->
+    <title>Janishammer · Root</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --j-primary: #e34c26;
-            --j-secondary: #333333;
-            --j-font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-            --j-font-heading: 'Montserrat', sans-serif;
-            --j-font-body: 'Montserrat', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        /* Fix navbar spacing and size */
-        .j-nav {
-            padding: 1rem 2rem !important;
-            background: rgba(255, 255, 255, 0.9) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            color: white;
         }
         
-        .j-nav-links a {
-            font-size: 1.1rem !important;
-            padding: 0.8rem 1.5rem !important;
-            font-weight: 500 !important;
-        }
-        
-        .j-nav-brand {
-            font-size: 1.5rem !important;
-            font-weight: 700 !important;
-        }
-        
-        /* Fix button size */
-        .j-btn {
-            padding: 1rem 2.5rem !important;
-            font-size: 1.2rem !important;
-            font-weight: 600 !important;
-            border-radius: 50px !important;
-        }
-        
-        .test-product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .test-card {
-            background: rgba(255,255,255,0.4);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 2.5rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .test-card video {
+        /* Fixed Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 350px;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            height: 100%;
+            background-image: url('https://res.cloudinary.com/dfiomi0lb/image/upload/v1773774928/All-logo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -2;
         }
         
-        .test-card h2 {
-            font-size: 2rem;
-            margin: 1rem 0;
+        /* Dark overlay for readability */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            padding: 0 2rem;
+            max-width: 1280px;
+            margin: 20px auto 0;
+        }
+        
+        .nav-container {
+            display: grid;
+            grid-template-columns: 100px 1fr 100px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 60px;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .brand-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .brand-logo {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1); /* Makes logo white */
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-item:hover {
+            color: #F4D03F; /* Accent gold */
+        }
+        
+        .nav-item.active {
+            color: #F4D03F;
             font-weight: 600;
         }
         
-        .test-card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin: 1rem 0;
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #F4D03F;
+            border-radius: 2px;
         }
         
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .j-nav-links a {
-                font-size: 1rem !important;
-                padding: 0.6rem 1rem !important;
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 160px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 0.5rem;
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-content a {
+            color: white;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            display: block;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        
+        .dropdown-content a:hover {
+            background: #E34C26; /* Primary orange */
+            transform: translateX(5px);
+        }
+        
+        .ham-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 2px 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero-logo {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+        }
+        
+        /* Content Section (placeholder for products) */
+        .content-section {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            color: white;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #F4D03F;
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #F4D03F;
+        }
+        
+        .product-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #E34C26;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #E34C26;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .product-btn:hover {
+            background: #2C3E50;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-brand {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #E34C26;
+        }
+        
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #F4D03F;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: #E34C26;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-contact h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #F4D03F;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: #E34C26;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media screen and (max-width: 991px) {
+            .nav-container {
+                grid-template-columns: 80px 1fr 80px;
+                padding: 0.5rem 1rem;
             }
             
-            .test-card {
+            .nav-menu {
+                gap: 1.5rem;
+            }
+        }
+        
+        @media screen and (max-width: 767px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-radius: 20px;
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .dropdown-content {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                background: transparent;
+                border: none;
+                padding: 0;
+                margin: 0.5rem 0 0 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media screen and (max-width: 479px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                min-height: 60vh;
+            }
+            
+            .product-card {
                 padding: 1.5rem;
-            }
-            
-            .test-card h2 {
-                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div style="text-align: center; padding: 3rem 1rem;">
-        <h1 style="font-size: 3rem; font-weight: 700;">🏠 Janishammer Family</h1>
-        <p style="font-size: 1.2rem; opacity: 0.8;">Testing our multi-domain system</p>
-    </div>
-
-    <div class="test-product-grid">
-        <div class="test-card">
-            <video autoplay loop muted playsinline>
-                <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/janishammer.mp4" type="video/mp4">
-            </video>
-            <h2>JanisHammer</h2>
-            <p>Seeking peaceful, healthy productive lifestyle</p>
-            <p style="font-weight: 600; color: var(--j-primary);">Launch 2020</p>
-            <p style="font-size: 1rem; margin: 1.5rem 0;">Welcome to the Family. This page tests our central injector and navigation system. Click around to visit all subdomains!</p>
-            <button class="j-btn" onclick="alert('Injector working! Navbar and buttons fixed!')">Test Injector</button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand-wrapper">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1773567285/Janis_icon_trans.png" alt="Janishammer" class="brand-logo">
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <div class="dropdown">
+                    <a href="#" class="nav-item">Lifestyle</a>
+                    <div class="dropdown-content">
+                        <a href="flow.html">Flow</a>
+                        <a href="daje.html">Daje</a>
+                        <a href="https://i-flexthailand.com" target="_blank">I-Flex</a>
+                        <a href="jade.html">Jade</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item">Blog</a>
+                <a href="#" class="nav-item">Contact Us</a>
+            </div>
+            
+            <div class="ham-wrapper">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
-    </div>
-
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1773775765/All_Janishammer_temp.png" alt="Janishammer Hero">
+        </div>
+    </section>
+    
+    <!-- Content Section (Placeholder Products) -->
+    <section class="content-section">
+        <h2 class="section-title">Our Lifestyle Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Strength Series</h3>
+                <p>Built for those who seek lasting power and resilience. The foundation of every journey.</p>
+                <div class="product-price">฿2,500</div>
+                <button class="product-btn">Explore</button>
+            </div>
+            
+            <div class="product-card">
+                <h3>Wisdom Collection</h3>
+                <p>Timeless pieces that grow with you. Designed for the mindful path.</p>
+                <div class="product-price">฿3,200</div>
+                <button class="product-btn">Explore</button>
+            </div>
+            
+            <div class="product-card">
+                <h3>Peace Essentials</h3>
+                <p>Find your center with our curated selection for daily balance.</p>
+                <div class="product-price">฿1,800</div>
+                <button class="product-btn">Explore</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Janishammer</h3>
+                    <p>We create lifestyle that creates strength, wisdom, and peace.</p>
+                    <p>info@janishammer.com</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">📱</a>
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Strength</a></li>
+                        <li><a href="#">Wisdom</a></li>
+                        <li><a href="#">Peace</a></li>
+                        <li><a href="#">Collections</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Janishammer. All rights reserved. Crafted with purpose.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Simple Hamburger Toggle -->
     <script>
-        console.log('✅ janishammer-home page loaded with fixed navbar');
-        if (window.validateJanishammer) {
-            setTimeout(() => window.validateJanishammer(), 500);
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 </html>
