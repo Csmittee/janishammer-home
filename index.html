@@ -18,7 +18,7 @@
     <style>
         /* Force body to full width */
         body {
-            width: 100%;
+            width: 100vw;
             max-width: 100%;
             overflow-x: hidden;
             margin: 0;
@@ -28,10 +28,10 @@
         /* Hero section - truly full width */
         .hero {
             position: relative;
-            width: 100vw;
+            width: 100%;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
-            min-height: 80vh;
+            /* min-height: 80vh; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -159,7 +159,9 @@
             display: block;
             width: 100%;
         }
-        
+
+       
+  
         /* Janishammer card always on top and centered */
         .business-card:first-child {
             grid-column: 1 / -1;
@@ -281,6 +283,17 @@
         <p class="section-subtitle">Seeking peaceful, healthy productive lifestyle · Launch 2020</p>
         
         <div class="business-grid">
+              <!-- Janishammer Home Card (self) - centered full width -->
+            <a href="https://janishammer.com" class="business-card" style="border-top: 5px solid #E34C26;">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/janishammer.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Janishammer</h3>
+                <p>We create lifestyle</p>
+                <span class="card-tag">The mothership →</span>
+            </a>            
             <!-- Janis Flow Card -->
             <a href="https://flow.janishammer.com" class="business-card card-flow">
                 <div class="video-wrapper">
@@ -329,17 +342,7 @@
                 <span class="card-tag">Explore Jade →</span>
             </a>
             
-            <!-- Janishammer Home Card (self) - centered full width -->
-            <a href="https://janishammer.com" class="business-card" style="border-top: 5px solid #E34C26;">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/janishammer.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h3>Janishammer</h3>
-                <p>We create lifestyle</p>
-                <span class="card-tag">The mothership →</span>
-            </a>
+          
         </div>
     </section>
 </body>
