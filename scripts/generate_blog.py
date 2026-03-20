@@ -259,7 +259,7 @@ def main():
     
     # Read posts from CSV
     posts = []
-    with open(CSV_FILE, 'r', encoding='utf-8') as f:
+    with open(CSV_FILE, 'r', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         for row in reader:
             posts.append(row)
