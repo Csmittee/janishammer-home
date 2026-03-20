@@ -1,0 +1,30 @@
+name: Build Blog
+
+on:
+  push:
+    paths:
+      - 'janishammer-home/blog/posts.csv'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Generate Blog
+        run: |
+          python scripts/generate_blog.py
+      
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add janishammer-home/blog/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update blog from CSV"
+          git push
