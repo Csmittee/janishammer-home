@@ -35,5 +35,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-update blog from CSV"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git push origin HEAD:main
           fi
