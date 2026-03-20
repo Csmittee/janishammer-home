@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janishammer · We create lifestyle</title>
+
+    <!-- META TAGS -->
+    <meta name="description" content="We proudly present our lifestyle projects - Flow, Daje, I-Flex, Jade. Launch 2020">
+    <meta property="og:title" content="Janishammer">
+    <meta property="og:description" content="Seeking peaceful, healthy productive lifestyle">
+    <meta property="og:image" content="https://res.cloudinary.com/dfiomi0lb/image/upload/v1773341421/Eng_SEO_OG.png">
+    <meta property="og:url" content="https://janishammer.com">
+    
+    
+<!-- INJECTOR_START -->
+<!-- This area will be replaced by Python -->
+<!-- INJECTOR_END -->
+    
+    <style>
+        /* YOUR CONTROL PATTERN */
+        html, body {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Force hero container full width */
+        .hero {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            position: relative;
+            left: 0;
+        }
+        
+        /* HERO BLOCK - 16:9 exact ratio for 1920x1080 */
+        .hero-block {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 16 / 9;        /* Perfect for 1920x1080 */
+            background-image: url('https://res.cloudinary.com/dfiomi0lb/image/upload/v1773775765/All_Janishammer_temp.png');
+            background-position: center;
+            background-size: contain;     /* Shows full image without cropping */
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+        
+        /* Content overlay positioned absolutely */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 3rem;
+            border-radius: 24px;
+            backdrop-filter: blur(3px);
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: #E34C26;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .hero-button:hover {
+            background: #F4D03F;
+            color: #2C3E50;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        
+        /* Projects section */
+        .projects-section {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 4rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Business cards - 2 column grid */
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .business-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .business-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            animation: float 6s ease-in-out infinite;
+            display: block;
+            width: 100%;
+        }
+        
+        /* Janishammer card featured at top */
+        .business-card:first-child {
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 50%;
+        }
+        
+        @media (max-width: 768px) {
+            .business-card:first-child {
+                max-width: 100%;
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+            50% { transform: translateY(-15px); box-shadow: 0 35px 50px rgba(0,0,0,0.25); }
+            100% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        }
+        
+        .business-card:hover {
+            transform: scale(1.05) translateY(-20px);
+            box-shadow: 0 40px 60px rgba(0,0,0,0.3);
+            background: white;
+            animation-play-state: paused;
+        }
+        
+        .video-wrapper {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            background: #f0f0f0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        
+        .business-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #2C3E50;
+        }
+        
+        .business-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-tag {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: #E34C26;
+            color: white;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .business-card:hover .card-tag {
+            background: #F4D03F;
+            color: #2C3E50;
+        }
+        
+        /* Brand-specific card accents */
+        .card-flow { border-top: 5px solid #D4E157; }
+        .card-daje { border-top: 5px solid #000000; }
+        .card-iflex { border-top: 5px solid #FFD700; }
+        .card-jade { border-top: 5px solid #6F4E37; }
+        
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { font-size: 1.1rem; }
+            .hero-content { padding: 1.5rem; }
+        }
+        
+        @media screen and (max-width: 479px) {
+            .hero-block {
+                background-size: cover;  /* Cover on mobile to fill width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO - Using your pattern with exact 16:9 ratio -->
+    <section class="hero">
+        <div class="hero-block">
+            <div class="hero-content">
+                <h1>Coming soon</h1>
+                <p>We proudly present our lifestyle projects</p>
+                <a href="/contact" class="hero-button">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section">
+        <h2 class="section-title">Our Family</h2>
+        <p class="section-subtitle">Seeking peaceful, healthy productive lifestyle · Launch 2020</p>
+        
+        <div class="business-grid">
+            <!-- JANISHAMMER CARD (FIRST - featured) -->
+            <a href="https://janishammer.com" class="business-card" style="border-top: 5px solid #E34C26;">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/janishammer.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Janishammer</h3>
+                <p>We create lifestyle</p>
+                <span class="card-tag">The mothership →</span>
+            </a>
+            
+            <!-- Janis Flow Card -->
+            <a href="https://flow.janishammer.com" class="business-card card-flow">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Janisflow.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Janis Flow</h3>
+                <p>Lets flow! Skate, surf, lifestyle</p>
+                <span class="card-tag">Explore Flow →</span>
+            </a>
+            
+            <!-- Daje Games Card -->
+            <a href="https://daje.janishammer.com" class="business-card card-daje">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607213/Dajequeencatcher.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Daje Games</h3>
+                <p>Happiness you can catch</p>
+                <span class="card-tag">Explore Daje →</span>
+            </a>
+            
+            <!-- I-Flex Card -->
+            <a href="https://i-flexthailand.com" class="business-card card-iflex">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Iflex.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>I-Flex</h3>
+                <p>A healthy lifestyle</p>
+                <span class="card-tag">Explore I-Flex →</span>
+            </a>
+            
+            <!-- Jade Coffee Card -->
+            <a href="https://jade.janishammer.com" class="business-card card-jade">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Jade.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Jade Coffee</h3>
+                <p>Taste of heaven</p>
+                <span class="card-tag">Explore Jade →</span>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
