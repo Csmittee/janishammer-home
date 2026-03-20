@@ -3,7 +3,7 @@ import csv
 import os
 
 # Paths
-BLOG_DIR = "janishammer-home/blog"
+BLOG_DIR = "blog"
 CSV_FILE = f"{BLOG_DIR}/posts.csv"
 
 # HTML Templates
