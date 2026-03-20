@@ -3,11 +3,13 @@ import csv
 import os
 
 # Paths
-BLOG_DIR = "blog"
-THAI_BLOG_DIR = "th/blog"
-CSV_FILE = f"{BLOG_DIR}/posts.csv"
+CSV_FILE = "blog/posts.csv"
+ENGLISH_LISTING = "blog.html"
+THAI_LISTING = "th/blog.html"
+ENGLISH_POSTS_DIR = "blog"
+THAI_POSTS_DIR = "th/blog"
 
-# ===== LISTING TEMPLATE =====
+# ===== LISTING TEMPLATE (Your existing one) =====
 LISTING_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -241,7 +243,7 @@ POST_TEMPLATE = """<!DOCTYPE html>
             <a href="{next_link}">Next →</a>
         </div>
         <div class="back-to-blog">
-            <a href="index.html">← Back to Blog</a>
+            <a href="../blog.html">← Back to Blog</a>
         </div>
     </div>
 </body>
@@ -250,8 +252,10 @@ POST_TEMPLATE = """<!DOCTYPE html>
 def main():
     print("📖 Generating blog from CSV...")
     
-    # Create Thai directory if it doesn't exist
-    os.makedirs(THAI_BLOG_DIR, exist_ok=True)
+    # Create directories if they don't exist
+    os.makedirs(ENGLISH_POSTS_DIR, exist_ok=True)
+    os.makedirs(THAI_POSTS_DIR, exist_ok=True)
+    os.makedirs("th", exist_ok=True)
     
     # Read posts from CSV
     posts = []
@@ -260,7 +264,7 @@ def main():
         for row in reader:
             posts.append(row)
     
-    # Generate individual post pages (English + Thai)
+    # Generate individual post pages
     for i, post in enumerate(posts):
         slug = post['slug']
         
@@ -268,8 +272,8 @@ def main():
         content_html = post['content'].replace('\n\n', '</p><p>')
         content_html = '<p>' + content_html + '</p>'
         
-        prev_link = posts[i-1]['slug'] + '.html' if i > 0 else '#'
-        next_link = posts[i+1]['slug'] + '.html' if i < len(posts)-1 else '#'
+        prev_link = f"{posts[i-1]['slug']}.html" if i > 0 else '#'
+        next_link = f"{posts[i+1]['slug']}.html" if i < len(posts)-1 else '#'
         
         post_html = POST_TEMPLATE.format(
             title=post['title'],
@@ -281,36 +285,38 @@ def main():
             next_link=next_link
         )
         
-        output_file = f"{BLOG_DIR}/{slug}.html"
+        output_file = f"{ENGLISH_POSTS_DIR}/{slug}.html"
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(post_html)
-        print(f"✅ Generated English: {output_file}")
+        print(f"✅ Generated English post: {output_file}")
         
         # ===== THAI VERSION =====
         if post.get('title_th') and post.get('content_th'):
             content_th_html = post['content_th'].replace('\n\n', '</p><p>')
             content_th_html = '<p>' + content_th_html + '</p>'
             
+            thai_excerpt = post.get('excerpt_th', post['excerpt'])
+            
             post_th_html = POST_TEMPLATE.format(
                 title=post['title_th'],
-                excerpt=post.get('excerpt_th', post['excerpt']),
+                excerpt=thai_excerpt,
                 category=post['category'],
                 image_url=post['image_url'],
                 content_paragraphs=content_th_html,
-                prev_link=f"../{posts[i-1]['slug']}.html" if i > 0 else '#',
-                next_link=f"../{posts[i+1]['slug']}.html" if i < len(posts)-1 else '#'
+                prev_link=f"{posts[i-1]['slug']}.html" if i > 0 else '#',
+                next_link=f"{posts[i+1]['slug']}.html" if i < len(posts)-1 else '#'
             )
             
-            output_th_file = f"{THAI_BLOG_DIR}/{slug}.html"
+            output_th_file = f"{THAI_POSTS_DIR}/{slug}.html"
             with open(output_th_file, 'w', encoding='utf-8') as f:
                 f.write(post_th_html)
-            print(f"✅ Generated Thai: {output_th_file}")
+            print(f"✅ Generated Thai post: {output_th_file}")
     
-    # Generate English listing page
+    # Generate English listing page (blog.html)
     cards = []
     for post in posts:
         card = f"""
-        <a href="{post['slug']}.html" class="blog-card">
+        <a href="blog/{post['slug']}.html" class="blog-card">
             <div class="blog-card-img">
                 <img src="{post['image_url']}" alt="{post['title']}">
             </div>
@@ -323,32 +329,33 @@ def main():
         cards.append(card)
     
     listing_html = LISTING_TEMPLATE.format(cards='\n'.join(cards))
-    with open(f"{BLOG_DIR}/index.html", 'w', encoding='utf-8') as f:
+    with open(ENGLISH_LISTING, 'w', encoding='utf-8') as f:
         f.write(listing_html)
-    print(f"✅ Generated {BLOG_DIR}/index.html")
+    print(f"✅ Generated English listing: {ENGLISH_LISTING}")
     
-    # Generate Thai listing page
+    # Generate Thai listing page (th/blog.html)
     thai_cards = []
     for post in posts:
         if post.get('title_th'):
+            thai_excerpt = post.get('excerpt_th', post['excerpt'])
             thai_card = f"""
-            <a href="{post['slug']}.html" class="blog-card">
+            <a href="blog/{post['slug']}.html" class="blog-card">
                 <div class="blog-card-img">
                     <img src="{post['image_url']}" alt="{post['title_th']}">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-category">{post['category']}</div>
                     <h3 class="blog-card-title">{post['title_th']}</h3>
-                    <p class="blog-card-excerpt">{post.get('excerpt_th', post['excerpt'])}</p>
+                    <p class="blog-card-excerpt">{thai_excerpt}</p>
                 </div>
             </a>"""
             thai_cards.append(thai_card)
     
     if thai_cards:
         thai_listing_html = LISTING_TEMPLATE.format(cards='\n'.join(thai_cards))
-        with open(f"{THAI_BLOG_DIR}/index.html", 'w', encoding='utf-8') as f:
+        with open(THAI_LISTING, 'w', encoding='utf-8') as f:
             f.write(thai_listing_html)
-        print(f"✅ Generated {THAI_BLOG_DIR}/index.html")
+        print(f"✅ Generated Thai listing: {THAI_LISTING}")
     
     print("🎉 Blog generation complete!")
 
