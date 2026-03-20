@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog · Janishammer</title>
+    <meta name="description" content="Real stories about building businesses, learning from failure, and finding the path forward.">
+    <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
+    <script>
+        (function() {
+            var v = window.JANIS_VERSIONS;
+            function loadScript(src, callback) {
+                var s = document.createElement('script');
+                s.src = src;
+                s.async = false;
+                s.onload = callback;
+                document.head.appendChild(s);
+            }
+            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js', function() {
+                loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
+            });
+        })();
+    </script>
+    <style>
+        .blog-header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+        .blog-header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+        .blog-header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .blog-grid {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .blog-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .blog-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background: white;
+        }
+        .blog-card-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .blog-card:hover .blog-card-img img {
+            transform: scale(1.05);
+        }
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        .blog-card-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #E34C26;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .blog-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #2C3E50;
+            line-height: 1.3;
+        }
+        .blog-card-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .blog-header h1 { font-size: 2rem; }
+            .blog-grid { grid-template-columns: 1fr; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-header">
+        <h1>Stories from the journey</h1>
+        <p>Real lessons from building businesses, failing fast, and finding what works.</p>
+    </div>
+    <div class="blog-grid">
+        
+            <a href="blog/post-1.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009342/blog_1_img_1.png" alt="บทเรียน 1.5 ล้านบาท: การถูกหลอกที่สร้างธุรกิจของฉัน">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-category">Struggle</div>
+                    <h3 class="blog-card-title">บทเรียน 1.5 ล้านบาท: การถูกหลอกที่สร้างธุรกิจของฉัน</h3>
+                    <p class="blog-card-excerpt">ในปี 2020 เราสูญเสียเงิน 1.5 ล้านบาทให้กับซัพพลายเออร์ที่เราไม่เคยพบหน้า ความล้มเหลวนั้นสอนกฎ 5 ข้อที่เรายังใช้อยู่จนถึงทุกวันนี้</p>
+                </div>
+            </a>
+
+            <a href="blog/post-2.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_2_image_1.png" alt="ร้านค้าที่รุ่งเรืองและล่มสลายในหนึ่งปี: บทเรียนจากเทรนด์ Surfskate">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-category">Business</div>
+                    <h3 class="blog-card-title">ร้านค้าที่รุ่งเรืองและล่มสลายในหนึ่งปี: บทเรียนจากเทรนด์ Surfskate</h3>
+                    <p class="blog-card-excerpt">เราขายหมดเกลี้ยงติดต่อกัน 8 เดือน แล้วกระแสก็ซา สิ่งที่เทรนด์ surfskate สอนเราเกี่ยวกับจังหวะเวลา สินค้าคงคลัง และการรู้ว่าเมื่อไรควรถอย</p>
+                </div>
+            </a>
+
+            <a href="blog/post-3.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009340/blog_3_image_1.png" alt="โยคะบนน้ำ: เมื่อไอเดียดีๆ มาปะทะกับความเป็นจริง">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-category">Business</div>
+                    <h3 class="blog-card-title">โยคะบนน้ำ: เมื่อไอเดียดีๆ มาปะทะกับความเป็นจริง</h3>
+                    <p class="blog-card-excerpt">มันดูสวยงามบนทะเลสาบ แต่ทุกแหล่งน้ำก็มีผู้ดูแล นี่คือเหตุผลว่าทำไมการรู้ว่าเมื่อไรควรหยุดคือทักษะที่แท้จริง</p>
+                </div>
+            </a>
+
+            <a href="blog/post-4.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_4_image_1.png" alt="ความล้มเหลวของธุรกิจ SUP ที่นำไปสู่ความสำเร็จที่แท้จริง">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-category">Business</div>
+                    <h3 class="blog-card-title">ความล้มเหลวของธุรกิจ SUP ที่นำไปสู่ความสำเร็จที่แท้จริง</h3>
+                    <p class="blog-card-excerpt">บทสนทนาเกี่ยวกับปัญหา การเดินทางไปพบซัพพลายเออร์ และการสั่งซื้อเล็กๆ น้อยๆ หลายปีได้สร้าง I-Flex ไม่ใช่จากแผนการใหญ่ — แต่จากความสัมพันธ์</p>
+                </div>
+            </a>
+
+            <a href="blog/post-5.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009343/blog_5_image_1.png" alt="เครื่องหยิบตุ๊กตา คำถามของลูกสาว และธุรกิจที่เราไม่คาดคิด">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-category">Business</div>
+                    <h3 class="blog-card-title">เครื่องหยิบตุ๊กตา คำถามของลูกสาว และธุรกิจที่เราไม่คาดคิด</h3>
+                    <p class="blog-card-excerpt">ซื้อที่บ้านได้ไหม? คำถามนั้นนำไปสู่ความร่วมมือกับโรงงานในจีนและ Daje Queencatcher บางครั้งธุรกิจที่ดีที่สุดก็เริ่มต้นจากคำถามที่เล็กที่สุด</p>
+                </div>
+            </a>
+
+            <a href="blog/post-6.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_6_image_1.png" alt="กาแฟหก แคปซูลราคาแพง และคำถามที่เปลี่ยนแปลงทุกอย่าง">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-category">Business</div>
+                    <h3 class="blog-card-title">กาแฟหก แคปซูลราคาแพง และคำถามที่เปลี่ยนแปลงทุกอย่าง</h3>
+                    <p class="blog-card-excerpt">กาแฟหกใส่โน้ตของเรา แคปซูลที่อยู่ข้างๆ มีราคาแพง ทำไมเราทำแบบนี้ไม่ได้? คำถามนั้นกลายเป็น Jade Project</p>
+                </div>
+            </a>
+    </div>
+</body>
+</html>
