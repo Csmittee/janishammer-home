@@ -30,11 +30,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
-          git add blog/ th/   # ← Add th/ folder
-          if git diff --staged --quiet; then
+          git add blog/ th/
+          if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Auto-update blog from CSV"
+            git pull --rebase origin main
             git push origin main
           fi
