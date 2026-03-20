@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Claw Machine, a Daughter's Question · Janishammer Blog</title>
+    <meta name="description" content="'Can we buy one for home?' That question led to a factory partnership in China and Daje Queencatcher. Sometimes the best businesses start as the smallest questions.">
+    
+    <!-- INJECTOR VERSION CONTROLLER -->
+    <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
+    <script>
+        (function() {
+            var v = window.JANIS_VERSIONS;
+            function loadScript(src) {
+                var s = document.createElement('script');
+                s.src = src;
+                s.async = false;
+                document.head.appendChild(s);
+            }
+            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
+            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js');
+        })();
+    </script>
+    
+    <style>
+        .post-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .post-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .post-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #E34C26;
+            font-weight: 600;
+        }
+        .post-title {
+            font-size: 2.5rem;
+            color: #2C3E50;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+        .post-meta {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .post-feature-img {
+            width: 100%;
+            border-radius: 24px;
+            margin: 1.5rem 0;
+        }
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+        }
+        .post-content p {
+            margin-bottom: 1.2rem;
+        }
+        .post-content h2 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            color: #2C3E50;
+        }
+        .post-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .post-gallery img {
+            width: 100%;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .post-gallery img:hover {
+            transform: scale(1.02);
+        }
+        .post-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        .post-nav a {
+            text-decoration: none;
+            color: #E34C26;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .post-nav a:hover {
+            color: #2C3E50;
+        }
+        .back-to-blog {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .back-to-blog a {
+            display: inline-block;
+            background: #E34C26;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .back-to-blog a:hover {
+            background: #2C3E50;
+            transform: scale(1.02);
+        }
+        @media (max-width: 768px) {
+            .post-container { padding: 1.5rem; margin: 1rem; }
+            .post-title { font-size: 1.8rem; }
+            .post-content { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <div class="post-header">
+            <div class="post-category">Business / Family</div>
+            <h1 class="post-title">A Claw Machine, a Daughter's Question, and the Business I Didn't See Coming</h1>
+            <div class="post-meta">By Janis · 3 min read</div>
+        </div>
+        
+        <img class="post-feature-img" src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009343/blog_5_image_1.png" alt="Claw machine with colorful prizes">
+        
+        <div class="post-content">
+            <p>My daughter looked at me with the kind of focus only a seven-year-old can have and asked: <em>Can we buy one for home?</em></p>
+            
+            <p>She'd been playing claw machines everywhere we went. And somewhere along the way, she got good. Really good. Better than average. She'd figured out the timing, the grip, the machines that paid out and the ones that didn't. It was her thing. So when she asked if we could have one at home, I didn't say no. I said: <em>Let me look into it.</em></p>
+            
+            <p>That answer sent me down a path I never expected.</p>
+            
+            <p>By 2024, I had gone back to corporate work. Not because I wanted to, but because most of my businesses — Flow, I-Flex — were still more like fun projects than serious income. They were real, but they weren't paying the bills yet. So I was doing the corporate thing again while building on the side.</p>
+            
+            <p>When my daughter asked about the claw machine, I did what I always do: research. I found a supplier in China. But something felt off. The original company I wanted to buy from showed signs of long-term trust issues quickly. Red flags. So I kept looking.</p>
+            
+            <p>That's when I ended up in Panyu at a hotel. A gentleman I'd connected with showed up and asked for a short talk. I said yes. Half an hour, I told myself. Just a conversation. He invited me to see his lab in the back of the hotel. I went.</p>
+            
+            <p>That half hour turned into a partnership that's still growing. Snail Time — that's the name we work under. Today we have multiple projects running. A small factory in Thailand producing parts. And we're solving real problems for customers: technical support, custom modifications, things most importers never bother with.</p>
+            
+            <p>What started as a daughter wanting a claw machine became Daje Queencatcher.</p>
+            
+            <p>Here's what I've learned: sometimes the most serious businesses start as the least serious questions. I wasn't looking for a new venture. I was trying to make my kid happy. But I showed up, I paid attention, and when the right person appeared, I said yes to the conversation.</p>
+            
+            <p>That's how it works. You don't plan it. You just keep your eyes open, trust your gut on who feels right, and let the small things lead to bigger things.</p>
+            
+            <p>And yes — my daughter got her claw machine. But she got something else too. She watched her dad build something from nothing, starting with her question.</p>
+        </div>
+        
+        <!-- Gallery Images -->
+        <div class="post-gallery">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009344/blog_5_image_2.png" alt="Factory meeting" onclick="openImage(this.src)">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009344/blog_5_image_3.png" alt="Machine assembly" onclick="openImage(this.src)">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/clawmachine-production-3" alt="Production line" onclick="openImage(this.src)">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/shop-2" alt="Daje shop front" onclick="openImage(this.src)">
+        </div>
+        
+        <div class="post-nav">
+            <a href="post-4.html">← Previous</a>
+            <a href="post-6.html">Next →</a>
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="index.html">← Back to Blog</a>
+        </div>
+    </div>
+    
+    <script>
+        function openImage(src) {
+            window.open(src, '_blank');
+        }
+    </script>
+</body>
+</html>
