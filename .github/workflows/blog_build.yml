@@ -3,7 +3,7 @@ name: Build Blog
 on:
   push:
     paths:
-      - 'janishammer-home/blog/posts.csv'
+      - 'blog/posts.csv'
   workflow_dispatch:
 
 jobs:
