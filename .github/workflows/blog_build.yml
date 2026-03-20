@@ -16,25 +16,35 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Generate Blog
         run: |
           python scripts/generate_blog.py
-      
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add all generated files
           git add blog/ th/
+          
+          # Check if anything changed
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "Auto-update blog from CSV"
-            git pull --rebase origin main
-            git push origin main
+            exit 0
           fi
+          
+          # Commit
+          git commit -m "Auto-update blog from CSV"
+          
+          # Pull latest changes (in case of race condition)
+          git pull --rebase origin main || true
+          
+          # Push
+          git push origin main
