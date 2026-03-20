@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 1.5 Million Baht Lesson · Janishammer Blog</title>
-    <meta name="description" content="In 2020, I lost 1.5 million baht to a supplier I never met. That failure taught me the five rules I still use today.">
-    
-    <!-- INJECTOR VERSION CONTROLLER -->
+    <title>The 1.5 Million Baht Lesson: How Getting Cheated Built My Business · Janishammer Blog</title>
+    <meta name="description" content="In 2020 I lost 1.5 million baht to a supplier I never met. That failure taught me the five rules I still use today.">
     <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
     <script>
         (function() {
             var v = window.JANIS_VERSIONS;
-            function loadScript(src) {
+            function loadScript(src, callback) {
                 var s = document.createElement('script');
                 s.src = src;
                 s.async = false;
+                s.onload = callback;
                 document.head.appendChild(s);
             }
-            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
-            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js');
+            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js', function() {
+                loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
+            });
         })();
     </script>
-    
     <style>
         .post-container {
             max-width: 800px;
@@ -32,12 +31,10 @@
             border-radius: 32px;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        
         .post-header {
             text-align: center;
             margin-bottom: 2rem;
         }
-        
         .post-category {
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -45,65 +42,29 @@
             color: #E34C26;
             font-weight: 600;
         }
-        
         .post-title {
             font-size: 2.5rem;
             color: #2C3E50;
             margin: 1rem 0;
             line-height: 1.2;
         }
-        
         .post-meta {
             color: #888;
             font-size: 0.9rem;
         }
-        
         .post-feature-img {
             width: 100%;
             border-radius: 24px;
             margin: 1.5rem 0;
         }
-        
         .post-content {
             font-size: 1.1rem;
             line-height: 1.7;
             color: #333;
         }
-        
         .post-content p {
             margin-bottom: 1.2rem;
         }
-        
-        .post-content h2 {
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-            color: #2C3E50;
-        }
-        
-        .post-content h3 {
-            font-size: 1.2rem;
-            margin: 1.2rem 0 0.5rem;
-            color: #E34C26;
-        }
-        
-        .post-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .post-gallery img {
-            width: 100%;
-            border-radius: 16px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .post-gallery img:hover {
-            transform: scale(1.02);
-        }
-        
         .post-nav {
             display: flex;
             justify-content: space-between;
@@ -111,23 +72,15 @@
             padding-top: 2rem;
             border-top: 1px solid rgba(0,0,0,0.1);
         }
-        
         .post-nav a {
             text-decoration: none;
             color: #E34C26;
             font-weight: 600;
-            transition: color 0.3s ease;
         }
-        
-        .post-nav a:hover {
-            color: #2C3E50;
-        }
-        
         .back-to-blog {
             text-align: center;
             margin-top: 2rem;
         }
-        
         .back-to-blog a {
             display: inline-block;
             background: #E34C26;
@@ -136,82 +89,36 @@
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
-        
-        .back-to-blog a:hover {
-            background: #2C3E50;
-            transform: scale(1.02);
-        }
-        
         @media (max-width: 768px) {
             .post-container { padding: 1.5rem; margin: 1rem; }
             .post-title { font-size: 1.8rem; }
-            .post-content { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="post-container">
         <div class="post-header">
-            <div class="post-category">Struggle / Business</div>
+            <div class="post-category">Struggle</div>
             <h1 class="post-title">The 1.5 Million Baht Lesson: How Getting Cheated Built My Business</h1>
             <div class="post-meta">By Janis · 3 min read</div>
         </div>
-        
-        <!-- Feature Image (primary) -->
-        <img class="post-feature-img" src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009342/blog_1_img_1.png" alt="Shipping container at port">
-        
+        <img class="post-feature-img" src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009342/blog_1_img_1.png" alt="The 1.5 Million Baht Lesson: How Getting Cheated Built My Business">
         <div class="post-content">
-            <p>The moment I realized I'd lost 1.5 million baht, I wasn't angry. I was sitting in lockdown, staring at my phone, watching a shipping container that didn't exist sail across an ocean it would never reach. And I thought: <em>Well, there goes the escape plan.</em></p>
-            
-            <p>Let me back up. In 2020, I was a plant manager for a French company in Thailand. Good pay. Corporate title. The kind of job people spend decades chasing. But everything started shifting — reorgs, travel restrictions, a move to supply chain director that meant constant trips to India, Japan, Korea. Meanwhile, my body was falling apart. Overweight. Chronic muscle pain. Zero flexibility. So I started showing up at the gym every single day, and I never stopped. That discipline? That was the first sign something else was brewing.</p>
-            
-            <p>By 2021, the country was completely locked down, and I took a 6-million-baht package to leave. Freedom. Or so I thought.</p>
-            
-            <p>I had this vision: buy premium Hammer Strength equipment from the UK. Build something real. Janis Hammer — named after my daughter, Janis, who was six at the time. Hammer for the brand I trusted. It felt like destiny.</p>
-            
-            <p>But I couldn't travel to inspect the goods. Covid made sure of that. I wired the money. Paid without seeing a correct Bill of Lading. Trusted a voice on the phone who refused video calls and dodged live reviews. Six months later, the equipment didn't exist. 1.5 million baht. Gone.</p>
-            
-            <h2>Five Rules I'll Never Forget</h2>
-            <p>That failure taught me five things I'll never forget:</p>
-            <ol>
-                <li><strong>Never pay without seeing the correct BL (Bill of Lading).</strong></li>
-                <li><strong>If it's high stakes and first-time business, meet them in person.</strong></li>
-                <li><strong>Use Letters of Credit for overseas deals until trust is earned.</strong></li>
-                <li><strong>Even with a BL, verify with the forwarder directly.</strong></li>
-                <li><strong>If someone refuses a conference call or live review? Walk away. Immediately.</strong></li>
-            </ol>
-            
-            <p>The company was registered. Janis Hammer existed on paper. But it never really ran. And honestly? That was fine, because I was learning the harder truth: escaping the rat race isn't about one big move. It's about realizing your future can't depend on some senior executive who sees you as replaceable. And when you start a business? Trust no one.</p>
-            
-            <p>So in late 2021, while still in lockdown, I watched my daughter Jayda (my Janis) fall in love with skateboarding. Surfskate was exploding in Thailand. I'd spent money on her training, saw her natural gift, and immediately started researching brands we didn't have yet. The company name was already there — Janis Hammer — but the project shifted. Janis Flow was born.</p>
-            
-            <p>That's the story for another post. But here's what I want you to take away: sometimes your first business fails. Sometimes you lose money you can't afford. But if you're paying attention, you don't lose the lesson. And that lesson? It becomes the foundation for everything that comes next.</p>
+            <p>The moment I realized I'd lost 1.5 million baht, I wasn't angry. I was sitting in lockdown, staring at my phone, watching a shipping container that didn't exist sail across an ocean it would never reach. And I thought: Well, there goes the escape plan.</p><p>Let me back up. In 2020, I was a plant manager for a French company in Thailand. Good pay. Corporate title. The kind of job people spend decades chasing. But everything started shifting — reorgs, travel restrictions, a move to supply chain director that meant constant trips to India, Japan, Korea. Meanwhile, my body was falling apart. Overweight. Chronic muscle pain. Zero flexibility. So I started showing up at the gym every single day, and I never stopped. That discipline? That was the first sign something else was brewing.</p><p>By 2021, the country was completely locked down, and I took a 6-million-baht package to leave. Freedom. Or so I thought.</p><p>I had this vision: buy premium Hammer Strength equipment from the UK. Build something real. Janis Hammer — named after my daughter, Janis, who was six at the time. Hammer for the brand I trusted. It felt like destiny.</p><p>But I couldn't travel to inspect the goods. Covid made sure of that. I wired the money. Paid without seeing a correct Bill of Lading. Trusted a voice on the phone who refused video calls and dodged live reviews. Six months later, the equipment didn't exist. 1.5 million baht. Gone.</p><p>That failure taught me five things I'll never forget:
+1. Never pay without seeing the correct BL.
+2. If it's high stakes and first-time business, meet them in person.
+3. Use Letters of Credit for overseas deals until trust is earned.
+4. Even with a BL, verify with the forwarder directly.
+5. If someone refuses a conference call or live review? Walk away. Immediately.</p><p>The company was registered. Janis Hammer existed on paper. But it never really ran. And honestly? That was fine, because I was learning the harder truth: escaping the rat race isn't about one big move. It's about realizing your future can't depend on some senior executive who sees you as replaceable. And when you start a business? Trust no one.</p><p>So in late 2021, while still in lockdown, I watched my daughter Jayda (my Janis) fall in love with skateboarding. Surfskate was exploding in Thailand. I'd spent money on her training, saw her natural gift, and immediately started researching brands we didn't have yet. The company name was already there — Janis Hammer — but the project shifted. Janis Flow was born.</p><p>That's the story for another post. But here's what I want you to take away: sometimes your first business fails. Sometimes you lose money you can't afford. But if you're paying attention, you don't lose the lesson. And that lesson? It becomes the foundation for everything that comes next.</p>
         </div>
-        
-        <!-- Gallery Images (additional from your list) -->
-        <div class="post-gallery">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009335/blog_1_img_2.png" alt="Behind the scenes" onclick="openImage(this.src)">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009337/blog_1_image_3.png" alt="The warehouse" onclick="openImage(this.src)">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009336/blog_1_image_4.png" alt="Reflection" onclick="openImage(this.src)">
-        </div>
-        
-        <!-- Navigation -->
         <div class="post-nav">
             <a href="#">← Previous</a>
             <a href="post-2.html">Next →</a>
         </div>
-        
         <div class="back-to-blog">
             <a href="index.html">← Back to Blog</a>
         </div>
     </div>
-    
-    <script>
-        function openImage(src) {
-            window.open(src, '_blank');
-        }
-    </script>
 </body>
 </html>

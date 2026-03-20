@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog · Janishammer</title>
+    <meta name="description" content="Real stories about building businesses, learning from failure, and finding the path forward.">
+    <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
+    <script>
+        (function() {
+            var v = window.JANIS_VERSIONS;
+            function loadScript(src, callback) {
+                var s = document.createElement('script');
+                s.src = src;
+                s.async = false;
+                s.onload = callback;
+                document.head.appendChild(s);
+            }
+            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js', function() {
+                loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
+            });
+        })();
+    </script>
+    <style>
+        .blog-header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+        .blog-header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+        .blog-header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .blog-grid {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .blog-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .blog-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background: white;
+        }
+        .blog-card-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .blog-card:hover .blog-card-img img {
+            transform: scale(1.05);
+        }
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        .blog-card-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #E34C26;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .blog-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #2C3E50;
+            line-height: 1.3;
+        }
+        .blog-card-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .blog-header h1 { font-size: 2rem; }
+            .blog-grid { grid-template-columns: 1fr; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-header">
+        <h1>Stories from the journey</h1>
+        <p>Real lessons from building businesses, failing fast, and finding what works.</p>
+    </div>
+    <div class="blog-grid">
+        
+        <a href="post-1.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009342/blog_1_img_1.png" alt="The 1.5 Million Baht Lesson: How Getting Cheated Built My Business">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-card-category">Struggle</div>
+                <h3 class="blog-card-title">The 1.5 Million Baht Lesson: How Getting Cheated Built My Business</h3>
+                <p class="blog-card-excerpt">In 2020 I lost 1.5 million baht to a supplier I never met. That failure taught me the five rules I still use today.</p>
+            </div>
+        </a>
+
+        <a href="post-2.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_2_image_1.png" alt="The Shop That Boomed and Bust in One Year: What a Surfskate Trend Taught Me">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-card-category">Business</div>
+                <h3 class="blog-card-title">The Shop That Boomed and Bust in One Year: What a Surfskate Trend Taught Me</h3>
+                <p class="blog-card-excerpt">We sold out for 8 months. Then the wave crashed. What a surfskate trend taught me about timing, inventory, and knowing when to exit.</p>
+            </div>
+        </a>
+
+        <a href="post-3.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009340/blog_3_image_1.png" alt="Yoga on Water: When a Great Idea Meets Reality">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-card-category">Business</div>
+                <h3 class="blog-card-title">Yoga on Water: When a Great Idea Meets Reality</h3>
+                <p class="blog-card-excerpt">It looked incredible on the lake. But every water source came with a gatekeeper. Here's why knowing when to stop is the real skill.</p>
+            </div>
+        </a>
+
+        <a href="post-4.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_4_image_1.png" alt="How a Failed SUP Business Led to Our Real Breakthrough">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-card-category">Business</div>
+                <h3 class="blog-card-title">How a Failed SUP Business Led to Our Real Breakthrough</h3>
+                <p class="blog-card-excerpt">A conversation about a problem, a trip to meet a supplier, and years of small orders built I-Flex. Not from a grand plan — from relationships.</p>
+            </div>
+        </a>
+
+        <a href="post-5.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009343/blog_5_image_1.png" alt="A Claw Machine, a Daughter's Question, and the Business I Didn't See Coming">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-card-category">Business</div>
+                <h3 class="blog-card-title">A Claw Machine, a Daughter's Question, and the Business I Didn't See Coming</h3>
+                <p class="blog-card-excerpt">'Can we buy one for home?' That question led to a factory partnership in China and Daje Queencatcher. Sometimes the best businesses start as the smallest questions.</p>
+            </div>
+        </a>
+
+        <a href="post-6.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_6_image_1.png" alt="A Spill of Coffee, an Expensive Capsule, and the Question That Changed Everything">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-card-category">Business</div>
+                <h3 class="blog-card-title">A Spill of Coffee, an Expensive Capsule, and the Question That Changed Everything</h3>
+                <p class="blog-card-excerpt">Coffee spilled across my notes. The capsule next to me was expensive. Why can't we do this? That question became Jade Project.</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

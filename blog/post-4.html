@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How I-Flex Was Born · Janishammer Blog</title>
+    <title>How a Failed SUP Business Led to Our Real Breakthrough · Janishammer Blog</title>
     <meta name="description" content="A conversation about a problem, a trip to meet a supplier, and years of small orders built I-Flex. Not from a grand plan — from relationships.">
-    
-    <!-- INJECTOR VERSION CONTROLLER -->
     <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
     <script>
         (function() {
             var v = window.JANIS_VERSIONS;
-            function loadScript(src) {
+            function loadScript(src, callback) {
                 var s = document.createElement('script');
                 s.src = src;
                 s.async = false;
+                s.onload = callback;
                 document.head.appendChild(s);
             }
-            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
-            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js');
+            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js', function() {
+                loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
+            });
         })();
     </script>
-    
     <style>
         .post-container {
             max-width: 800px;
@@ -66,26 +65,6 @@
         .post-content p {
             margin-bottom: 1.2rem;
         }
-        .post-content h2 {
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-            color: #2C3E50;
-        }
-        .post-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        .post-gallery img {
-            width: 100%;
-            border-radius: 16px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .post-gallery img:hover {
-            transform: scale(1.02);
-        }
         .post-nav {
             display: flex;
             justify-content: space-between;
@@ -97,10 +76,6 @@
             text-decoration: none;
             color: #E34C26;
             font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .post-nav a:hover {
-            color: #2C3E50;
         }
         .back-to-blog {
             text-align: center;
@@ -114,76 +89,31 @@
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .back-to-blog a:hover {
-            background: #2C3E50;
-            transform: scale(1.02);
         }
         @media (max-width: 768px) {
             .post-container { padding: 1.5rem; margin: 1rem; }
             .post-title { font-size: 1.8rem; }
-            .post-content { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="post-container">
         <div class="post-header">
-            <div class="post-category">Business / Growth</div>
+            <div class="post-category">Business</div>
             <h1 class="post-title">How a Failed SUP Business Led to Our Real Breakthrough</h1>
             <div class="post-meta">By Janis · 3 min read</div>
         </div>
-        
-        <img class="post-feature-img" src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_4_image_1.png" alt="I-Flex Pilates reformer">
-        
+        <img class="post-feature-img" src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009345/blog_4_image_1.png" alt="How a Failed SUP Business Led to Our Real Breakthrough">
         <div class="post-content">
-            <p>The SUP yoga project didn't work. But if I hadn't walked into that lake with a bunch of paddleboards, I never would have met K. Nok. And if I hadn't met K. Nok, I never would have found the machine that became everything.</p>
-            
-            <p>Here's how it happened.</p>
-            
-            <p>While we were testing SUP yoga, I connected with Nok, who owned a local yoga studio. She mentioned something in passing that stuck with me: she was looking for a good Pilates reformer — something capable and affordable. Her current machine was German-made, beautiful, but expensive. She wanted an alternative.</p>
-            
-            <p>Now, I've learned one thing over the years: I know how to work with China. Research, suppliers, travel, relationships. It's what I do. So I started digging. Talked to several suppliers. Filtered through the noise until I found one that felt right. Then I flew to meet the owner in person. Because after losing 1.5 million baht on a deal I never saw, I don't start anything without looking someone in the eye.</p>
-            
-            <p>We started small. Three machines. Sometimes four. Orders here and there, nothing massive. From 2022 onward, we kept ordering, kept talking, kept improving the design together. It wasn't our main business. Honestly, it was almost background noise while we figured out other things.</p>
-            
-            <p>Then, in 2025, I had a conversation with Scott, the owner of our supplier. He looked at me and said: <em>You've been building this business in Thailand seriously for years now. Why not take our support and open it up to more people?</em></p>
-            
-            <p>And he was right. The product was tested. Proven. Years of real-world use, real feedback, real improvements. We knew it was one of the best machines out there at a price that made sense. So I-Flex Thailand was born.</p>
-            
-            <p>Not from a grand plan. Not from a pitch deck or investor funding. From a conversation about a problem Nok had, a trip to meet a supplier in China, and years of small, consistent orders that built trust.</p>
-            
-            <p>Here's what I value most: when we discover a problem — even years later — we fix it. Replacement parts sent free of charge. Because this isn't just business. It's responsibility. It's real.</p>
-            
-            <p>Thank you, Nok Yoga, for trusting us. And thank you, Adjust Body China, for the partnership.</p>
-            
-            <p>Sometimes the path to your real business looks nothing like you expected. You just have to keep showing up, keep building relationships, and pay attention when someone says: <em>I need something better.</em></p>
+            <p>The SUP yoga project didn't work. But if I hadn't walked into that lake with a bunch of paddleboards, I never would have met K. Nok. And if I hadn't met K. Nok, I never would have found the machine that became everything.</p><p>Here's how it happened.</p><p>While we were testing SUP yoga, I connected with Nok, who owned a local yoga studio. She mentioned something in passing that stuck with me: she was looking for a good Pilates reformer — something capable and affordable. Her current machine was German-made, beautiful, but expensive. She wanted an alternative.</p><p>Now, I've learned one thing over the years: I know how to work with China. Research, suppliers, travel, relationships. It's what I do. So I started digging. Talked to several suppliers. Filtered through the noise until I found one that felt right. Then I flew to meet the owner in person. Because after losing 1.5 million baht on a deal I never saw, I don't start anything without looking someone in the eye.</p><p>We started small. Three machines. Sometimes four. Orders here and there, nothing massive. From 2022 onward, we kept ordering, kept talking, kept improving the design together. It wasn't our main business. Honestly, it was almost background noise while we figured out other things.</p><p>Then, in 2025, I had a conversation with Scott, the owner of our supplier. He looked at me and said: You've been building this business in Thailand seriously for years now. Why not take our support and open it up to more people?</p><p>And he was right. The product was tested. Proven. Years of real-world use, real feedback, real improvements. We knew it was one of the best machines out there at a price that made sense. So I-Flex Thailand was born.</p><p>Not from a grand plan. Not from a pitch deck or investor funding. From a conversation about a problem Nok had, a trip to meet a supplier in China, and years of small, consistent orders that built trust.</p><p>Here's what I value most: when we discover a problem — even years later — we fix it. Replacement parts sent free of charge. Because this isn't just business. It's responsibility. It's real.</p><p>Thank you, Nok Yoga, for trusting us. And thank you, Adjust Body China, for the partnership.</p><p>Sometimes the path to your real business looks nothing like you expected. You just have to keep showing up, keep building relationships, and pay attention when someone says: I need something better.</p>
         </div>
-        
-        <!-- Gallery Images -->
-        <div class="post-gallery">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009339/blog_4_image_2.png" alt="Factory visit" onclick="openImage(this.src)">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/v1774009341/blog_4_image_3.png" alt="Machine assembly" onclick="openImage(this.src)">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-4" alt="Production line" onclick="openImage(this.src)">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-7" alt="Quality control" onclick="openImage(this.src)">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-6" alt="Final assembly" onclick="openImage(this.src)">
-        </div>
-        
         <div class="post-nav">
             <a href="post-3.html">← Previous</a>
             <a href="post-5.html">Next →</a>
         </div>
-        
         <div class="back-to-blog">
             <a href="index.html">← Back to Blog</a>
         </div>
     </div>
-    
-    <script>
-        function openImage(src) {
-            window.open(src, '_blank');
-        }
-    </script>
 </body>
 </html>
