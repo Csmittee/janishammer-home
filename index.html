@@ -6,126 +6,221 @@
     <title>Janishammer · We create lifestyle</title>
 
     <!-- META TAGS -->
-    <meta name="description" content="We proudly present our lifestyle projects - Flow, Daje, I-Flex, Jade. Launch 2020">
+    <meta name="description" content="Welcome to Janis Hammer family. Visit our various lifestyle products — Flow, Daje, I-Flex, Jade.">
     <meta property="og:title" content="Janishammer">
-    <meta property="og:description" content="Seeking peaceful, healthy productive lifestyle">
+    <meta property="og:description" content="Welcome to Janis Hammer family. Visit our various lifestyle products.">
     <meta property="og:image" content="https://res.cloudinary.com/dfiomi0lb/image/upload/v1773341421/Eng_SEO_OG.png">
     <meta property="og:url" content="https://janishammer.com">
     
+    <!-- INJECTORS (fixed URLs) -->
     <script src="https://assets.janishammer.com/js/injector-core.js"></script>
     <script src="https://assets.janishammer.com/js/injector-config.js"></script>
-
+    
     <style>
-        /* YOUR CONTROL PATTERN */
-        html, body {
-            width: 100%;
-            max-width: 100vw;
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Force hero container full width */
-        .hero {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+        /* Hero section with video + image overlap */
+        .hero-section {
             position: relative;
-            left: 0;
+            width: 100%;
+            padding: 2rem 0 4rem;
         }
         
-        /* HERO BLOCK - 16:9 exact ratio for 1920x1080 */
-        .hero-block {
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+        
+        /* Top video (10% overlap with image) */
+        .hero-video-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-bottom: -5%; /* Creates 10% overlap (half of 10% on top, half on bottom) */
+            text-align: center;
+        }
+        
+        .hero-video {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: #000;
+        }
+        
+        /* Bottom image (overlaps video) */
+        .hero-image-wrapper {
             position: relative;
             z-index: 1;
-            width: 100%;
-            aspect-ratio: 16 / 9;        /* Perfect for 1920x1080 */
-            background-image: url('https://res.cloudinary.com/dfiomi0lb/image/upload/v1773775765/All_Janishammer_temp.png');
-            background-position: center;
-            background-size: contain;     /* Shows full image without cropping */
-            background-repeat: no-repeat;
-            margin: 0;
-        }
-        
-        /* Content overlay positioned absolutely */
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
             text-align: center;
-            width: 90%;
-            max-width: 800px;
-            background: rgba(0, 0, 0, 0.15);
-            padding: 3rem;
-            border-radius: 24px;
-            backdrop-filter: blur(3px);
         }
         
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+        .hero-image {
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 48px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(2px);
+        }
+        
+        /* Hero text overlay */
+        .hero-text {
+            text-align: center;
+            margin: 3rem auto 2rem;
+            max-width: 800px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
             color: white;
             text-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
         }
         
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: white;
-            text-shadow: 1px 2px 8px rgba(0,0,0,0.5);
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+            font-weight: 400;
         }
         
-        .hero-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: #E34C26;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        /* Running marquee */
+        .marquee-section {
+            margin: 4rem 0;
+            overflow: hidden;
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 0;
         }
         
-        .hero-button:hover {
-            background: #F4D03F;
-            color: #2C3E50;
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        .marquee {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
         }
         
-        /* Projects section */
-        .projects-section {
+        .marquee img {
+            height: 80px;
+            width: auto;
+            margin: 0 1rem;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .marquee img:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* News section */
+        .news-section {
             max-width: 1280px;
             margin: 4rem auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
         
-        .section-title {
-            text-align: center;
+        .news-section h1 {
             font-size: 2.5rem;
             color: white;
-            margin-bottom: 1rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-        }
-        
-        .section-subtitle {
+            margin-bottom: 2rem;
             text-align: center;
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 4rem;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
         
-        /* Business cards - 2 column grid */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .news-item {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        .news-header:hover {
+            background: rgba(0,0,0,0.05);
+        }
+        
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2C3E50;
+        }
+        
+        .news-date {
+            font-size: 0.8rem;
+            color: #E34C26;
+            font-weight: 500;
+        }
+        
+        .news-toggle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #E34C26;
+            transition: transform 0.3s ease;
+            width: 32px;
+            text-align: center;
+        }
+        
+        .news-item.open .news-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .news-content {
+            max-height: 0;
+            padding: 0 2rem;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            border-top: 1px solid transparent;
+        }
+        
+        .news-item.open .news-content {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+            border-top-color: rgba(0,0,0,0.1);
+        }
+        
+        .news-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .news-image {
+            max-width: 100%;
+            border-radius: 16px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* Business cards (only Flow, Daje, I-Flex, Jade) */
         .business-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             padding: 1rem;
+            max-width: 1280px;
+            margin: 2rem auto;
         }
         
         @media (max-width: 768px) {
@@ -147,26 +242,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             animation: float 6s ease-in-out infinite;
             display: block;
-            width: 100%;
-        }
-        
-        /* Janishammer card featured at top */
-        .business-card:first-child {
-            grid-column: 1 / -1;
-            justify-self: center;
-            max-width: 50%;
-        }
-        
-        @media (max-width: 768px) {
-            .business-card:first-child {
-                max-width: 100%;
-            }
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-            50% { transform: translateY(-15px); box-shadow: 0 35px 50px rgba(0,0,0,0.25); }
-            100% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         }
         
         .business-card:hover {
@@ -176,6 +251,12 @@
             animation-play-state: paused;
         }
         
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
         .video-wrapper {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -183,14 +264,12 @@
             overflow: hidden;
             margin-bottom: 1.5rem;
             background: #f0f0f0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .video-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            pointer-events: none;
         }
         
         .business-card h3 {
@@ -227,98 +306,190 @@
         .card-iflex { border-top: 5px solid #FFD700; }
         .card-jade { border-top: 5px solid #6F4E37; }
         
-        /* Mobile adjustments */
-        @media screen and (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1.1rem; }
-            .hero-content { padding: 1.5rem; }
-        }
-        
-        @media screen and (max-width: 479px) {
-            .hero-block {
-                background-size: cover;  /* Cover on mobile to fill width */
-            }
+        @media (max-width: 768px) {
+            .hero-video { width: 95%; }
+            .hero-image { width: 95%; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-text h2 { font-size: 1.2rem; }
+            .marquee img { height: 50px; }
+            .news-header { padding: 1rem; }
+            .news-title { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- HERO - Using your pattern with exact 16:9 ratio -->
-    <section class="hero">
-        <div class="hero-block">
-            <div class="hero-content">
-                <h1>Coming soon</h1>
-                <p>We proudly present our lifestyle projects</p>
-                <a href="/contact" class="hero-button">Contact us</a>
+    <!-- HERO SECTION with video + image overlap -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-video-wrapper">
+                <video autoplay loop muted playsinline class="hero-video">
+                    <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1774092577/Janis_Hammer_var_2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774011860/jaydaandcher.heic" alt="Janis Hammer family" class="hero-image">
+            </div>
+            <div class="hero-text">
+                <h1>Welcome to Janis Hammer family</h1>
+                <h2>Visit our various lifestyle products</h2>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects-section">
-        <h2 class="section-title">Our Family</h2>
-        <p class="section-subtitle">Seeking peaceful, healthy productive lifestyle · Launch 2020</p>
-        
-        <div class="business-grid">
-            <!-- JANISHAMMER CARD (FIRST - featured) -->
-            <a href="https://janishammer.com" class="business-card" style="border-top: 5px solid #E34C26;">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/janishammer.mp4" type="video/mp4">
-                    </video>
+    <!-- RUNNING MARQUEE -->
+    <div class="marquee-section">
+        <div class="marquee">
+            <!-- Duplicate images for seamless loop -->
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774009336/blog_1_image_4.png" alt="Lifestyle">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janis-shop-2" alt="Janis shop">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janisshop-1" alt="Janis shop">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/shop-1.heic" alt="Shop">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/p-yoga-3" alt="Yoga">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/clawmachine-production-3" alt="Claw machine">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-4" alt="Factory">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-7" alt="Factory">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-6" alt="Factory">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/shop-2" alt="Shop">
+            <!-- Duplicate for seamless loop -->
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774009336/blog_1_image_4.png" alt="Lifestyle">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janis-shop-2" alt="Janis shop">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janisshop-1" alt="Janis shop">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/shop-1.heic" alt="Shop">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/p-yoga-3" alt="Yoga">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/clawmachine-production-3" alt="Claw machine">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-4" alt="Factory">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-7" alt="Factory">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-6" alt="Factory">
+            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/shop-2" alt="Shop">
+        </div>
+    </div>
+
+    <!-- NEWS SECTION (expand/collapse) -->
+    <section class="news-section">
+        <h1>News and activities</h1>
+        <div class="news-list" id="news-list">
+            <!-- News 1 -->
+            <div class="news-item" data-news-id="1">
+                <div class="news-header">
+                    <span class="news-title">I-Flex Thailand — Your Pilates Partner</span>
+                    <span class="news-date">March 2026</span>
+                    <span class="news-toggle">+</span>
                 </div>
-                <h3>Janishammer</h3>
-                <p>We create lifestyle</p>
-                <span class="card-tag">The mothership →</span>
-            </a>
+                <div class="news-content">
+                    <p class="news-text">We're excited to announce the launch of I-Flex Thailand at <a href="https://i-flexthailand.com" target="_blank">i-flexthailand.com</a>. Welcome emerging studios to visit and get inspired. We can help calculate your floor plan, business scale, and offer a variety of products to support your growth.</p>
+                </div>
+            </div>
             
-            <!-- Janis Flow Card -->
-            <a href="https://flow.janishammer.com" class="business-card card-flow">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Janisflow.mp4" type="video/mp4">
-                    </video>
+            <!-- News 2 -->
+            <div class="news-item" data-news-id="2">
+                <div class="news-header">
+                    <span class="news-title">15 Claw Machines Ready for Delivery</span>
+                    <span class="news-date">March 2026</span>
+                    <span class="news-toggle">+</span>
                 </div>
-                <h3>Janis Flow</h3>
-                <p>Lets flow! Skate, surf, lifestyle</p>
-                <span class="card-tag">Explore Flow →</span>
-            </a>
+                <div class="news-content">
+                    <p class="news-text">We have 15 claw machines with full WiFi connectivity, 2 LED displays, and a wonderful mainboard controller — ready to go from our factory. Contact us for pricing and details.</p>
+                    <img class="news-image" src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774011823/IMG_3470.heic" alt="Claw machines">
+                </div>
+            </div>
             
-            <!-- Daje Games Card -->
-            <a href="https://daje.janishammer.com" class="business-card card-daje">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607213/Dajequeencatcher.mp4" type="video/mp4">
-                    </video>
+            <!-- News 3 -->
+            <div class="news-item" data-news-id="3">
+                <div class="news-header">
+                    <span class="news-title">New Website Launch</span>
+                    <span class="news-date">March 2026</span>
+                    <span class="news-toggle">+</span>
                 </div>
-                <h3>Daje Games</h3>
-                <p>Happiness you can catch</p>
-                <span class="card-tag">Explore Daje →</span>
-            </a>
-            
-            <!-- I-Flex Card -->
-            <a href="https://i-flexthailand.com" class="business-card card-iflex">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Iflex.mp4" type="video/mp4">
-                    </video>
+                <div class="news-content">
+                    <p class="news-text">We are now launching our new website! Stay tuned for more updates. A lot of exciting activities coming soon!</p>
+                    <img class="news-image" src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1773169905/Adjustbody_warehouse_iobzvt.jpg" alt="Warehouse">
                 </div>
-                <h3>I-Flex</h3>
-                <p>A healthy lifestyle</p>
-                <span class="card-tag">Explore I-Flex →</span>
-            </a>
-            
-            <!-- Jade Coffee Card -->
-            <a href="https://jade.janishammer.com" class="business-card card-jade">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Jade.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h3>Jade Coffee</h3>
-                <p>Taste of heaven</p>
-                <span class="card-tag">Explore Jade →</span>
-            </a>
+            </div>
         </div>
     </section>
+
+    <!-- BUSINESS CARDS (Flow, Daje, I-Flex, Jade) — Janishammer card removed -->
+    <div class="business-grid">
+        <!-- Janis Flow Card -->
+        <a href="https://flow.janishammer.com" class="business-card card-flow">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Janisflow.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>Janis Flow</h3>
+            <p>Lets flow! Skate, surf, lifestyle</p>
+            <span class="card-tag">Explore Flow →</span>
+        </a>
+        
+        <!-- Daje Games Card -->
+        <a href="https://daje.janishammer.com" class="business-card card-daje">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607213/Dajequeencatcher.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>Daje Games</h3>
+            <p>Happiness you can catch</p>
+            <span class="card-tag">Explore Daje →</span>
+        </a>
+        
+        <!-- I-Flex Card -->
+        <a href="https://i-flexthailand.com" class="business-card card-iflex">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Iflex.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>I-Flex</h3>
+            <p>A healthy lifestyle</p>
+            <span class="card-tag">Explore I-Flex →</span>
+        </a>
+        
+        <!-- Jade Coffee Card -->
+        <a href="https://jade.janishammer.com" class="business-card card-jade">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1773607212/Jade.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>Jade Coffee</h3>
+            <p>Taste of heaven</p>
+            <span class="card-tag">Explore Jade →</span>
+        </a>
+    </div>
+
+    <script>
+        // News expand/collapse functionality
+        document.querySelectorAll('.news-item').forEach(item => {
+            const header = item.querySelector('.news-header');
+            header.addEventListener('click', () => {
+                // Close other items (optional — if you want only one open at a time, uncomment)
+                // document.querySelectorAll('.news-item').forEach(other => {
+                //     if (other !== item && other.classList.contains('open')) {
+                //         other.classList.remove('open');
+                //     }
+                // });
+                item.classList.toggle('open');
+            });
+        });
+        
+        // Add scroll animation for news items
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.news-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
