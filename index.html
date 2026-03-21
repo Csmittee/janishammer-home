@@ -80,23 +80,23 @@
         }
         
         .business-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(245, 245, 245, 0.95);  /* Consistent light grey */
+            backdrop-filter: blur(8px);
             border-radius: 32px;
             padding: 2rem;
             text-align: center;
             text-decoration: none;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             animation: float 6s ease-in-out infinite;
             display: block;
         }
         
         .business-card:hover {
             transform: scale(1.05) translateY(-20px);
-            box-shadow: 0 40px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 40px 60px rgba(0,0,0,0.2);
             background: white;
             animation-play-state: paused;
         }
@@ -228,20 +228,28 @@
             cursor: pointer;
         }
         
-        .news-header:hover {
-            background: rgba(0,0,0,0.03);
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            cursor: pointer;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         
         .news-title {
             font-size: 1.2rem;
             font-weight: 600;
             color: #2C3E50;
+            flex: 1;
         }
         
         .news-date {
             font-size: 0.8rem;
             color: #E34C26;
             font-weight: 500;
+            white-space: nowrap;
         }
         
         .news-toggle {
@@ -251,6 +259,7 @@
             transition: transform 0.3s ease;
             width: 32px;
             text-align: center;
+            flex-shrink: 0;
         }
         
         .news-item.open .news-toggle {
@@ -294,14 +303,31 @@
             .news-header { padding: 1rem; }
             .news-title { font-size: 1rem; }
         }
+
+            .hero-logo {
+                width: 200px;
+                max-width: 80%;
+                margin-bottom: 1.5rem;
+                display: inline-block;
+        }
+            
+            @media (max-width: 768px) {
+                .hero-logo {
+                    width: 150px;
+            }
+        }
+
+
+
+
+
+        
     </style>
 </head>
 <body>
     <!-- HERO: Video + Image + Text -->
     <section class="hero-section">
-        <video autoplay loop muted playsinline class="hero-video">
-            <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1774092577/Janis_Hammer_var_2.mp4" type="video/mp4">
-        </video>
+        <img class="hero-logo" src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774092579/Janis_logo_var_3.png" alt="Janis Hammer">
         
         <img class="hero-image" src="https://res.cloudinary.com/dfiomi0lb/image/upload/c_auto,w_1000/f_jpg/jaydaandcher" alt="Jayda and Janis Hammer family">
         
