@@ -17,22 +17,8 @@ LISTING_TEMPLATE = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog · Janishammer</title>
     <meta name="description" content="Real stories about building businesses, learning from failure, and finding the path forward.">
-    <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
-    <script>
-        (function() {{
-            var v = window.JANIS_VERSIONS;
-            function loadScript(src, callback) {{
-                var s = document.createElement('script');
-                s.src = src;
-                s.async = false;
-                s.onload = callback;
-                document.head.appendChild(s);
-            }}
-            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js', function() {{
-                loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
-            }});
-        }})();
-    </script>
+    <script src="https://assets.janishammer.com/js/injector-core.js"></script>
+    <script src="https://assets.janishammer.com/js/injector-config.js"></script>
     <style>
         .blog-header {{
             text-align: center;
@@ -136,22 +122,8 @@ POST_TEMPLATE = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} · Janishammer Blog</title>
     <meta name="description" content="{excerpt}">
-    <script src="https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-versions.js"></script>
-    <script>
-        (function() {{
-            var v = window.JANIS_VERSIONS;
-            function loadScript(src, callback) {{
-                var s = document.createElement('script');
-                s.src = src;
-                s.async = false;
-                s.onload = callback;
-                document.head.appendChild(s);
-            }}
-            loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-config-v' + v.config + '.js', function() {{
-                loadScript('https://cdn.jsdelivr.net/gh/csmittee/janishammer-central/js/injector-core-v' + v.core + '.js');
-            }});
-        }})();
-    </script>
+    <script src="https://assets.janishammer.com/js/injector-core.js"></script>
+    <script src="https://assets.janishammer.com/js/injector-config.js"></script>
     <style>
         .post-container {{
             max-width: 800px;
