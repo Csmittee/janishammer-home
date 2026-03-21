@@ -17,91 +17,65 @@
     <script src="https://assets.janishammer.com/js/injector-config.js"></script>
     
     <style>
-        /* Hero section with video + image overlap */
+        /* Hero section with video only */
         .hero-section {
             position: relative;
             width: 100%;
-            padding: 2rem 0 4rem;
-        }
-        
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-        }
-        
-        /* Top video (10% overlap with image) */
-        .hero-video-wrapper {
-            position: relative;
-            z-index: 2;
-            margin-bottom: -5%; /* Creates 10% overlap (half of 10% on top, half on bottom) */
+            padding: 2rem 0 2rem;
             text-align: center;
         }
         
         .hero-video {
             width: 80%;
-            max-width: 800px;
+            max-width: 1000px;
             border-radius: 32px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             background: #000;
         }
         
-        /* Bottom image (overlaps video) */
-        .hero-image-wrapper {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-        
-        .hero-image {
-            width: 90%;
-            max-width: 1000px;
-            border-radius: 48px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            background: rgba(0,0,0,0.1);
-            backdrop-filter: blur(2px);
-        }
-        
-        /* Hero text overlay */
+        /* Hero text overlay — dark text with shadow for readability */
         .hero-text {
             text-align: center;
-            margin: 3rem auto 2rem;
+            margin: 2rem auto 3rem;
             max-width: 800px;
+            padding: 0 2rem;
         }
         
         .hero-text h1 {
             font-size: 3rem;
-            color: white;
-            text-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+            color: #1a1a1a;
+            text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
         
         .hero-text h2 {
             font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
-            text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+            color: #333;
+            text-shadow: 1px 1px 4px rgba(255,255,255,0.6);
             font-weight: 400;
         }
         
-        /* Running marquee */
+        /* Running marquee — fixed width 1280px */
         .marquee-section {
-            margin: 4rem 0;
+            max-width: 1280px;
+            margin: 3rem auto;
             overflow: hidden;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.1);
             padding: 1rem 0;
+            border-radius: 32px;
         }
         
         .marquee {
             display: flex;
-            animation: scroll 30s linear infinite;
+            animation: scroll 40s linear infinite;
             width: fit-content;
         }
         
         .marquee img {
             height: 80px;
             width: auto;
-            margin: 0 1rem;
+            margin: 0 0.75rem;
             border-radius: 16px;
             object-fit: cover;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -126,8 +100,8 @@
         
         .news-section h1 {
             font-size: 2.5rem;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            color: #1a1a1a;
+            text-shadow: 1px 1px 4px rgba(255,255,255,0.6);
             margin-bottom: 2rem;
             text-align: center;
         }
@@ -139,12 +113,13 @@
         }
         
         .news-item {
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 24px;
             overflow: hidden;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         
         .news-header {
@@ -157,7 +132,7 @@
         }
         
         .news-header:hover {
-            background: rgba(0,0,0,0.05);
+            background: rgba(0,0,0,0.03);
         }
         
         .news-title {
@@ -213,14 +188,14 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        /* Business cards (only Flow, Daje, I-Flex, Jade) */
+        /* Business cards */
         .business-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
-            padding: 1rem;
+            padding: 2rem;
             max-width: 1280px;
-            margin: 2rem auto;
+            margin: 2rem auto 4rem;
         }
         
         @media (max-width: 768px) {
@@ -308,7 +283,6 @@
         
         @media (max-width: 768px) {
             .hero-video { width: 95%; }
-            .hero-image { width: 95%; }
             .hero-text h1 { font-size: 2rem; }
             .hero-text h2 { font-size: 1.2rem; }
             .marquee img { height: 50px; }
@@ -318,33 +292,25 @@
     </style>
 </head>
 <body>
-    <!-- HERO SECTION with video + image overlap -->
+    <!-- HERO SECTION with video only -->
     <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-video-wrapper">
-                <video autoplay loop muted playsinline class="hero-video">
-                    <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1774092577/Janis_Hammer_var_2.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774011860/jaydaandcher.heic" alt="Janis Hammer family" class="hero-image">
-            </div>
-            <div class="hero-text">
-                <h1>Welcome to Janis Hammer family</h1>
-                <h2>Visit our various lifestyle products</h2>
-            </div>
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://res.cloudinary.com/dfiomi0lb/video/upload/v1774092577/Janis_Hammer_var_2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-text">
+            <h1>Welcome to Janis Hammer family</h1>
+            <h2>Visit our various lifestyle products</h2>
         </div>
     </section>
 
-    <!-- RUNNING MARQUEE -->
+    <!-- RUNNING MARQUEE (fixed width 1280px, images only) -->
     <div class="marquee-section">
         <div class="marquee">
-            <!-- Duplicate images for seamless loop -->
+            <!-- First set of images -->
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/v1774009336/blog_1_image_4.png" alt="Lifestyle">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janis-shop-2" alt="Janis shop">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janisshop-1" alt="Janis shop">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/shop-1.heic" alt="Shop">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/p-yoga-3" alt="Yoga">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/clawmachine-production-3" alt="Claw machine">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-4" alt="Factory">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-7" alt="Factory">
@@ -355,7 +321,6 @@
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janis-shop-2" alt="Janis shop">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/janisshop-1" alt="Janis shop">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/shop-1.heic" alt="Shop">
-            <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-resize/p-yoga-3" alt="Yoga">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/clawmachine-production-3" alt="Claw machine">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-4" alt="Factory">
             <img src="https://res.cloudinary.com/dfiomi0lb/image/upload/t_1000px-file-type-t0-jpeg/factory-7" alt="Factory">
@@ -364,11 +329,10 @@
         </div>
     </div>
 
-    <!-- NEWS SECTION (expand/collapse) -->
+    <!-- NEWS SECTION -->
     <section class="news-section">
         <h1>News and activities</h1>
         <div class="news-list" id="news-list">
-            <!-- News 1 -->
             <div class="news-item" data-news-id="1">
                 <div class="news-header">
                     <span class="news-title">I-Flex Thailand — Your Pilates Partner</span>
@@ -380,7 +344,6 @@
                 </div>
             </div>
             
-            <!-- News 2 -->
             <div class="news-item" data-news-id="2">
                 <div class="news-header">
                     <span class="news-title">15 Claw Machines Ready for Delivery</span>
@@ -393,7 +356,6 @@
                 </div>
             </div>
             
-            <!-- News 3 -->
             <div class="news-item" data-news-id="3">
                 <div class="news-header">
                     <span class="news-title">New Website Launch</span>
@@ -408,9 +370,8 @@
         </div>
     </section>
 
-    <!-- BUSINESS CARDS (Flow, Daje, I-Flex, Jade) — Janishammer card removed -->
+    <!-- BUSINESS CARDS (Flow, Daje, I-Flex, Jade) -->
     <div class="business-grid">
-        <!-- Janis Flow Card -->
         <a href="https://flow.janishammer.com" class="business-card card-flow">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
@@ -422,7 +383,6 @@
             <span class="card-tag">Explore Flow →</span>
         </a>
         
-        <!-- Daje Games Card -->
         <a href="https://daje.janishammer.com" class="business-card card-daje">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
@@ -434,7 +394,6 @@
             <span class="card-tag">Explore Daje →</span>
         </a>
         
-        <!-- I-Flex Card -->
         <a href="https://i-flexthailand.com" class="business-card card-iflex">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
@@ -446,7 +405,6 @@
             <span class="card-tag">Explore I-Flex →</span>
         </a>
         
-        <!-- Jade Coffee Card -->
         <a href="https://jade.janishammer.com" class="business-card card-jade">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
@@ -460,21 +418,15 @@
     </div>
 
     <script>
-        // News expand/collapse functionality
+        // News expand/collapse
         document.querySelectorAll('.news-item').forEach(item => {
             const header = item.querySelector('.news-header');
             header.addEventListener('click', () => {
-                // Close other items (optional — if you want only one open at a time, uncomment)
-                // document.querySelectorAll('.news-item').forEach(other => {
-                //     if (other !== item && other.classList.contains('open')) {
-                //         other.classList.remove('open');
-                //     }
-                // });
                 item.classList.toggle('open');
             });
         });
         
-        // Add scroll animation for news items
+        // Scroll animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
